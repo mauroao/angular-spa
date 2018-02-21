@@ -1,1 +1,17 @@
+body {
+	margin-top: 4em;
+}
+.table {
+	margin-top: 20px;
+}
+td {
+	text-align: left;
+}
+.form-control {
+	margin-bottom: 10px;
+}
+.selecionado {
+	background-color: yellow;
+}
+
 /* You can add global styles to this file, and also import other style files */
