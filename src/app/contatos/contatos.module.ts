@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ContatosListaComponent } from './contatos-lista/contatos-lista.component';
 import { ContatosNovoComponent } from './contatos-novo/contatos-novo.component';
 import { ContatosDetalheComponent } from './contatos-detalhe/contatos-detalhe.component';
+import { UserInterfaceModule } from '../user-interface/user-interface.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    UserInterfaceModule
   ],
   declarations: [
     ContatosListaComponent, 
