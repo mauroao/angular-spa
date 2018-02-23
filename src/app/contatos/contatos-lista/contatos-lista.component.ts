@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatosListaComponent implements OnInit {
 
+  currentPage: number = 1;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onLinkClicked(_page: number) {
+    this.currentPage = _page;
   }
 
 }

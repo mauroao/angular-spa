@@ -14,16 +14,11 @@
 
 <nav class="navbar fixed-bottom navbar-light bg-light border-top">
 
-  <!--
-	<ui-paginator 
-		current-page="currentPage" 
-		last-page="data.totalPages"
-		links-count="7" 
-		on-click-link="getContatos(page);" >
-	</ui-paginator>
--->
-
-  <ui-paginator>
+  <ui-paginator
+  	[current-page]="currentPage" 
+	[last-page]="20"
+	[links-count]="7"
+	(onLinkClicked)="onLinkClicked($event)" >
     
   </ui-paginator>
 
