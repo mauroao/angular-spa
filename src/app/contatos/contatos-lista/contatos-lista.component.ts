@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ContatosService } from '../../api/contatos.service';
+
 @Component({
   selector: 'contatos-lista',
   templateUrl: './contatos-lista.component.html',
@@ -8,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class ContatosListaComponent implements OnInit {
 
   currentPage: number = 1;
+  contatos = [];
 
-  constructor() { }
+  constructor(private contatosService: ContatosService) { }
 
   ngOnInit() {
+    this.contatos = this.contatosService.getContatos();
   }
 
   onLinkClicked(_page: number) {
