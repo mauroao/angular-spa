@@ -9,17 +9,27 @@ import { ContatosService } from '../../api/contatos.service';
 })
 export class ContatosListaComponent implements OnInit {
 
-  currentPage: number = 1;
-  contatos = [];
+  nameFilter: string = '';
+
+  data = {
+    pageNumber: 1,
+    paginatedData: [],
+    totalCount: 1,
+    totalPages: 1
+  };
 
   constructor(private contatosService: ContatosService) { }
 
+  getContatos(page: number) {
+    this.contatosService.getContatos(page, this.nameFilter).subscribe(data => this.data = data);    
+  }
+ 
   ngOnInit() {
-    this.contatos = this.contatosService.getContatos();
+    this.getContatos(1);
   }
 
-  onLinkClicked(_page: number) {
-    this.currentPage = _page;
+  onLinkClicked(page: number) {
+    this.getContatos(page);
   }
 
 }

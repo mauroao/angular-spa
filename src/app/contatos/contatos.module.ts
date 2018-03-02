@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule} from '@angular/forms';
 
 import { ApiModule } from './../api/api.module';
 import { UserInterfaceModule } from '../user-interface/user-interface.module';
@@ -11,6 +12,7 @@ import { ContatosDetalheComponent } from './contatos-detalhe/contatos-detalhe.co
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     UserInterfaceModule,
     ApiModule
   ],
