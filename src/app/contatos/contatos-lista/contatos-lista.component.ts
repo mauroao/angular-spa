@@ -1,3 +1,4 @@
+import { ConfigService } from './../../config/config.service';
 import { Component, OnInit } from '@angular/core';
 
 import { ContatosService } from '../../api/contatos.service';
@@ -10,6 +11,8 @@ import { ContatosService } from '../../api/contatos.service';
 export class ContatosListaComponent implements OnInit {
 
   nameFilter: string = '';
+  apiVersion: string = '';
+  appName: string = 'Lista Telefônica';
 
   data = {
     pageNumber: 1,
@@ -18,7 +21,7 @@ export class ContatosListaComponent implements OnInit {
     totalPages: 1
   };
 
-  constructor(private contatosService: ContatosService) { }
+  constructor(private contatosService: ContatosService, private configService: ConfigService) { }
 
   getContatos(page: number) {
     this.contatosService.getContatos(page, this.nameFilter).subscribe(data => this.data = data);    
@@ -26,6 +29,7 @@ export class ContatosListaComponent implements OnInit {
  
   ngOnInit() {
     this.getContatos(1);
+    this.apiVersion = this.configService.apiBaseUrl;
   }
 
   onLinkClicked(page: number) {
